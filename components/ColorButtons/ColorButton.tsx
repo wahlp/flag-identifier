@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ColorSwatch, Group, CheckIcon, rem } from '@mantine/core';
+import { ColorSwatch, CheckIcon, rem } from '@mantine/core';
 
-function toggleBorder(active: boolean) {
+function toggleBorder(active: boolean, isWhite: boolean) {
   if (active) {
-    return '2px solid #aaa'
+    return isWhite ? '2px solid #666' : '2px solid #aaa'
   } else {
     return ''
   }
@@ -18,6 +18,8 @@ type Props = {
 export function ColorButton({ name, color, onClick }: Props) {
   const [checked, setChecked] = useState(false);
 
+  const isWhite = name === 'white';
+
   return (
     <ColorSwatch
       component="button"
@@ -30,7 +32,11 @@ export function ColorButton({ name, color, onClick }: Props) {
         // store current c
         onClick(name);
       }}
-      sx={{ color: '#fff', border: toggleBorder(checked), cursor: 'pointer' }}
+      sx={{ 
+        color: isWhite ? '#000' : '#fff', 
+        border: toggleBorder(checked, isWhite), 
+        cursor: 'pointer' 
+      }}
     >
       {checked && <CheckIcon width={rem(10)} />}
     </ColorSwatch>
