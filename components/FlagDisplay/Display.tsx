@@ -49,7 +49,7 @@ export function Display({ selectedColors, strictMode }: Props) {
   ));
 
   return (
-    <Table>
+    <Table horizontalSpacing={100}>
       <thead>
         <tr>
           <th>Emoji</th>

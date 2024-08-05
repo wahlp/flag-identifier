@@ -4,7 +4,7 @@ import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeTo
 import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filters } from '../components/Filters/Filters';
 import { Display } from '../components/FlagDisplay/Display';
-import { Text, Container, Center } from '@mantine/core';
+import { Text, Container, Center, Title } from '@mantine/core';
 
 
 export default function HomePage() {
@@ -15,7 +15,12 @@ export default function HomePage() {
     <>
       {/* <Welcome /> */}
       <ColorSchemeToggle />
-      <br />
+
+      <Container mt={80} mb={80}>
+        <Title align="center" mb={20}>Flag Identifier</Title>
+        <Text align="center">Find a flag by its colours</Text>
+      </Container>
+
       <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
       <Center>
         <Filters setChecked={setChecked} checked={checked} />
@@ -25,7 +30,7 @@ export default function HomePage() {
         <br />
         {selectedColors.join(', ')}
       </Text>
-      <Container mt={40}>
+      <Container mt={40} size='xl'>
         <Display selectedColors={selectedColors} strictMode={checked} />
       </Container>
     </>
