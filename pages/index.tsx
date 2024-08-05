@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
+import { Filters } from '../components/Filters/Filters';
 import { Display } from '../components/FlagDisplay/Display';
-import { Text, Container, Checkbox } from '@mantine/core';
+import { Text, Container, Center } from '@mantine/core';
 
 
 export default function HomePage() {
@@ -16,14 +17,11 @@ export default function HomePage() {
       <ColorSchemeToggle />
       <br />
       <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
-      
-      <Checkbox
-        label="Match selected colours exactly"
-        checked={checked}
-        onChange={(event) => setChecked(event.currentTarget.checked)}
-      />
+      <Center>
+        <Filters setChecked={setChecked} checked={checked} />
+      </Center>
       <Text color="dimmed" align="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
-        Current filters: 
+        Current colour filters: 
         <br />
         {selectedColors.join(', ')}
       </Text>

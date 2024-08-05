@@ -34,7 +34,7 @@ export function ButtonGroup({ setSelectedColors, selectedColors }: Props) {
   ));
   
   return (
-    <Group position="center" spacing="xs">
+    <Group position="center" spacing="xs" mb={40}>
       {swatches}
     </Group>
   );
