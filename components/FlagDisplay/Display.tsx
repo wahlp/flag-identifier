@@ -9,9 +9,10 @@ interface DataItem {
 
 interface Props {
   selectedColors: string[];
+  strictMode: boolean;
 }
 
-export function Display({ selectedColors }: Props) {
+export function Display({ selectedColors, strictMode }: Props) {
   const [data, setData] = useState<DataItem[]>([]);
 
   useEffect(() => {
@@ -19,10 +20,19 @@ export function Display({ selectedColors }: Props) {
       .then((response) => response.json())
       .then((data: DataItem[]) => setData(data));
   }, []);
-  
-  const filteredData = data.filter((item) =>
-    selectedColors.every((color) => item.colours.includes(color))
-  );
+
+  const filteredData = data.filter((item) => {
+    const hasAllSelectedColors = selectedColors.every((color) =>
+      item.colours.includes(color)
+    );
+
+    if (strictMode) {
+      const hasExactNumberOfColors = item.colours.length === selectedColors.length;
+      return hasAllSelectedColors && hasExactNumberOfColors;
+    }
+
+    return hasAllSelectedColors;
+  });
 
   const rows = filteredData.map((item) => (
     <tr key={item.code}>
