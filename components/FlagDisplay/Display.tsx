@@ -18,7 +18,10 @@ export function Display({ selectedColors, strictMode }: Props) {
   useEffect(() => {
     fetch('/data.json')
       .then((response) => response.json())
-      .then((data: DataItem[]) => setData(data));
+      .then((data: DataItem[]) => {
+        data.sort((a, b) => a.code.localeCompare(b.code));
+        setData(data)
+      });
   }, []);
 
   const filteredData = data.filter((item) => {
