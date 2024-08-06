@@ -15,15 +15,15 @@ export default function HomePage() {
       <ColorSchemeToggle />
 
       <Container mt={80} mb={80}>
-        <Title align="center" mb={20}>Flag Identifier</Title>
-        <Text align="center">Find a flag by its colours</Text>
+        <Title ta="center" mb={20}>Flag Identifier</Title>
+        <Text ta="center">Find a flag by its colours</Text>
       </Container>
 
       <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
       <Center>
         <Filters setChecked={setChecked} checked={checked} />
       </Center>
-      <Text color="dimmed" align="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
+      <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
         Current colour filters: 
         <br />
         {selectedColors.join(', ')}
