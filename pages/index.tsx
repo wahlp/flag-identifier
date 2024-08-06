@@ -19,7 +19,9 @@ export default function HomePage() {
         <Text ta="center">Find a flag by its colours</Text>
       </Container>
 
-      <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
+      <Center>
+        <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
+      </Center>
       <Center>
         <Filters setChecked={setChecked} checked={checked} />
       </Center>

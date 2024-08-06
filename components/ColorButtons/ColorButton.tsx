@@ -32,15 +32,10 @@ export function ColorButton({ name, color, onClick }: Props) {
         // store current c
         onClick(name);
       }}
-      // sx={{ 
-      //   color: isWhite ? '#000' : '#fff', 
-      //   border: toggleBorder(checked, isWhite), 
-      //   cursor: 'pointer' 
-      // }}
       c={isWhite ? '#000' : '#fff'}
       bd={toggleBorder(checked, isWhite)}
     >
-      {checked && <CheckIcon width={rem(10)} />}
+      {checked && <CheckIcon style={{ width: rem(24), height: rem(24) }} />}
     </ColorSwatch>
   );
 }

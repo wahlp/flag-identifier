@@ -39,32 +39,32 @@ export function Display({ selectedColors, strictMode }: Props) {
   });
 
   const rows = filteredData.map((item) => (
-    <tr key={item.code}>
-      <td>
+    <Table.Tr key={item.code}>
+      <Table.Td>
         <Image 
           src={"/images/" + item.code.toLowerCase() + ".png"} 
           fit="none"
         />
-      </td>
-      <td>{item.code}</td>
-      <td>{item.name}</td>
-      <td>{item.colours.join(', ')}</td>
-      <td>{item.design.join(', ')}</td>
-    </tr>
+      </Table.Td>
+      <Table.Td>{item.code}</Table.Td>
+      <Table.Td>{item.name}</Table.Td>
+      <Table.Td>{item.colours.join(', ')}</Table.Td>
+      <Table.Td>{item.design.join(', ')}</Table.Td>
+    </Table.Tr>
   ));
 
   return (
-    <Table horizontalSpacing={100}>
-      <thead>
-        <tr>
-          <th>Emoji</th>
-          <th>Code</th>
-          <th>Full Name</th>
-          <th>Colours</th>
-          <th>Design</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
+    <Table horizontalSpacing={100} striped withTableBorder withColumnBorders>
+      <Table.Thead>
+        <Table.Tr>
+          <Table.Th>Emoji</Table.Th>
+          <Table.Th>Code</Table.Th>
+          <Table.Th>Full Name</Table.Th>
+          <Table.Th>Colours</Table.Th>
+          <Table.Th>Design</Table.Th>
+        </Table.Tr>
+      </Table.Thead>
+      <Table.Tbody>{rows}</Table.Tbody>
     </Table>
   );
 }
