@@ -1,10 +1,11 @@
 import { Table, Image } from '@mantine/core';
 import { useState, useEffect } from 'react';
 
-interface DataItem {
+export interface DataItem {
   code: string;
   name: string;
   colours: string[];
+  design: string[];
 }
 
 interface Props {
@@ -48,6 +49,7 @@ export function Display({ selectedColors, strictMode }: Props) {
       <td>{item.code}</td>
       <td>{item.name}</td>
       <td>{item.colours.join(', ')}</td>
+      <td>{item.design.join(', ')}</td>
     </tr>
   ));
 
@@ -59,6 +61,7 @@ export function Display({ selectedColors, strictMode }: Props) {
           <th>Code</th>
           <th>Full Name</th>
           <th>Colours</th>
+          <th>Design</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

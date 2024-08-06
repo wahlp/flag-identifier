@@ -6,14 +6,12 @@ import { Filters } from '../components/Filters/Filters';
 import { Display } from '../components/FlagDisplay/Display';
 import { Text, Container, Center, Title } from '@mantine/core';
 
-
 export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [checked, setChecked] = useState(false);
 
   return (
     <>
-      {/* <Welcome /> */}
       <ColorSchemeToggle />
 
       <Container mt={80} mb={80}>
