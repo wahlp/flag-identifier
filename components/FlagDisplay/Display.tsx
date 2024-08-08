@@ -10,10 +10,11 @@ export interface DataItem {
 
 interface Props {
   selectedColors: string[];
+  advancedFilters: string[];
   strictMode: boolean;
 }
 
-export function Display({ selectedColors, strictMode }: Props) {
+export function Display({ selectedColors, advancedFilters, strictMode }: Props) {
   const [data, setData] = useState<DataItem[]>([]);
 
   useEffect(() => {
@@ -30,12 +31,16 @@ export function Display({ selectedColors, strictMode }: Props) {
       item.colours.includes(color)
     );
 
+    const hasAllAdvancedFilters = advancedFilters.every((filter) =>
+      item.design.includes(filter)
+    );
+
     if (strictMode) {
       const hasExactNumberOfColors = item.colours.length === selectedColors.length;
-      return hasAllSelectedColors && hasExactNumberOfColors;
+      return hasAllSelectedColors && hasExactNumberOfColors && hasAllAdvancedFilters;
     }
 
-    return hasAllSelectedColors;
+    return hasAllSelectedColors && hasAllAdvancedFilters;
   });
 
   const rows = filteredData.map((item) => (

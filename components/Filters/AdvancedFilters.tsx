@@ -2,32 +2,41 @@ import { useState } from 'react';
 import { Table, Checkbox } from '@mantine/core';
 
 interface Item {
-  position: number;
+  id: string;
   name: string;
 }
 
 interface Props {
   data: Item[];
+  groupHeading: string;
+  setAdvancedFilters(selection: string[]): void;
+  advancedFilters: string[];
 }
 
-export function AdvancedFilters({ data }: Props) {
-  const [selectedRows, setSelectedRows] = useState<number[]>([]);
+export function AdvancedFilters({ 
+  data,
+  groupHeading: tableHeading,
+  setAdvancedFilters,
+  advancedFilters,
+}: Props) {
 
   const rows = data.map((item) => (
     <Table.Tr
       key={item.name}
-      bg={selectedRows.includes(item.position) ? 'var(--mantine-color-blue-light)' : undefined}
+      bg={advancedFilters.includes(item.id) ? 'var(--mantine-color-blue-light)' : undefined}
     >
       <Table.Td>
         <Checkbox
           aria-label="Select row"
-          checked={selectedRows.includes(item.position)}
-          onChange={(event) =>
-            setSelectedRows(
-              event.currentTarget.checked
-                ? [...selectedRows, item.position]
-                : selectedRows.filter((position) => position !== item.position)
-            )
+          checked={advancedFilters.includes(item.id)}
+          onChange={(event) => {
+              console.log(item.id)
+              setAdvancedFilters(
+                event.currentTarget.checked
+                  ? [...advancedFilters, item.id]
+                  : advancedFilters.filter((position) => position !== item.id)
+              )
+            }
           }
         />
       </Table.Td>
@@ -40,7 +49,7 @@ export function AdvancedFilters({ data }: Props) {
       <Table.Thead>
         <Table.Tr>
           <Table.Th />
-          <Table.Th>Element name</Table.Th>
+          <Table.Th>{tableHeading}</Table.Th>
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>{rows}</Table.Tbody>

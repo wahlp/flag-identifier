@@ -8,7 +8,8 @@ import { Text, Container, Center, Title } from '@mantine/core';
 
 export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [checked, setChecked] = useState(false);
+  const [strictMode, setStrictMode] = useState(false);
+  const [advancedFilters, setAdvancedFilters] = useState<string[]>([]);
 
   return (
     <>
@@ -23,15 +24,21 @@ export default function HomePage() {
         <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
       </Center>
       <Container>
-        <Filters setChecked={setChecked} checked={checked} />
+        <Filters setStrictMode={setStrictMode} strictMode={strictMode} 
+        setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
       </Container>
+      <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
+        Current advanced filters: 
+        <br />
+        {advancedFilters.join(', ')}
+      </Text>
       <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
         Current colour filters: 
         <br />
         {selectedColors.join(', ')}
       </Text>
       <Container mt={40} size='xl'>
-        <Display selectedColors={selectedColors} strictMode={checked} />
+        <Display selectedColors={selectedColors} strictMode={strictMode} advancedFilters={advancedFilters} />
       </Container>
     </>
   );
