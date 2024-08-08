@@ -43,7 +43,7 @@
     {"code": "CF", "name": "Central African Republic", "colours": ["blue", "white", "green", "yellow", "red"], "design": ["horizontal stripes", "symbol top left"]},
     {"code": "TD", "name": "Chad", "colours": ["blue", "yellow", "red"], "design": ["three stripes", "vertical stripes"]},
     {"code": "CL", "name": "Chile", "colours": ["blue", "white", "red"], "design": ["symbol top left", "two stripes"]},
-    {"code": "CN", "name": "China", "colours": ["red", "yellow"], "design": ["solid background", "symbol top left", "symbol centered"]},
+    {"code": "CN", "name": "China", "colours": ["red", "yellow"], "design": ["solid background", "symbol top left"]},
     {"code": "CX", "name": "Christmas Island", "colours": ["blue", "green", "yellow"], "design": ["diagonal stripes"]},
     {"code": "CC", "name": "Cocos (Keeling) Islands", "colours": ["green", "yellow"], "design": ["solid background"]},
     {"code": "CO", "name": "Colombia", "colours": ["yellow", "blue", "red"], "design": ["three stripes", "horizontal stripes"]},
