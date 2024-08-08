@@ -3,6 +3,7 @@ import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filters } from '../components/Filters/Filters';
+import { AdvancedFilters } from '../components/Filters/AdvancedFilters';
 import { Display } from '../components/FlagDisplay/Display';
 import { Text, Container, Center, Title } from '@mantine/core';
 
@@ -24,10 +25,10 @@ export default function HomePage() {
         <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
       </Center>
       <Container>
-        <Filters setStrictMode={setStrictMode} strictMode={strictMode} 
-        setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
+        <Filters setStrictMode={setStrictMode} strictMode={strictMode} />
+        <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
       </Container>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
+      {/* <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
         Current advanced filters: 
         <br />
         {advancedFilters.join(', ')}
@@ -36,8 +37,8 @@ export default function HomePage() {
         Current colour filters: 
         <br />
         {selectedColors.join(', ')}
-      </Text>
-      <Container mt={40} size='xl'>
+      </Text> */}
+      <Container mt={40} mb={40} size='xl'>
         <Display selectedColors={selectedColors} strictMode={strictMode} advancedFilters={advancedFilters} />
       </Container>
     </>
