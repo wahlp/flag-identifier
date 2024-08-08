@@ -15,7 +15,7 @@ export function Filters({
           label="Match selected colours exactly"
           checked={strictMode}
           onChange={(event) => setStrictMode(event.currentTarget.checked)}
-          mb={20}
+          mb={60}
         />
       </>
     )

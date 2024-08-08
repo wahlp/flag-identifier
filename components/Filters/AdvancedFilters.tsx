@@ -112,7 +112,12 @@ export function AdvancedFilters({
   ))
 
   return (
-    <Flex>
+    <Flex
+      justify="flex-start"
+      align="flex-start"
+      direction="row"
+      wrap="wrap"
+    >
       {advancedFiltersElements}
     </Flex>
   )
