@@ -22,9 +22,9 @@ export default function HomePage() {
       <Center>
         <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
       </Center>
-      <Center>
+      <Container>
         <Filters setChecked={setChecked} checked={checked} />
-      </Center>
+      </Container>
       <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
         Current colour filters: 
         <br />
