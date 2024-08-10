@@ -1,4 +1,4 @@
-import { Table, Image } from '@mantine/core';
+import { Table, Image, Text } from '@mantine/core';
 import { useState, useEffect } from 'react';
 
 export interface DataItem {
@@ -59,17 +59,20 @@ export function Display({ selectedColors, advancedFilters, strictMode }: Props) 
   ));
 
   return (
-    <Table striped withTableBorder withColumnBorders>
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>Emoji</Table.Th>
-          <Table.Th>Code</Table.Th>
-          <Table.Th>Full Name</Table.Th>
-          <Table.Th>Colours</Table.Th>
-          <Table.Th>Design</Table.Th>
-        </Table.Tr>
-      </Table.Thead>
-      <Table.Tbody>{rows}</Table.Tbody>
-    </Table>
+    <>
+      <Text>{filteredData.length}/{data.length} matched flags</Text>
+      <Table striped withTableBorder withColumnBorders>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th>Emoji</Table.Th>
+            <Table.Th>Code</Table.Th>
+            <Table.Th>Full Name</Table.Th>
+            <Table.Th>Colours</Table.Th>
+            <Table.Th>Design</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody>{rows}</Table.Tbody>
+      </Table>
+    </>
   );
 }
