@@ -5,7 +5,7 @@ import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filters } from '../components/Filters/Filters';
 import { AdvancedFilters } from '../components/Filters/AdvancedFilters';
 import { Display } from '../components/FlagDisplay/Display';
-import { Text, Container, Title, Stack, Paper } from '@mantine/core';
+import { Text, Container, Title, Stack, Paper, Anchor } from '@mantine/core';
 
 export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -19,6 +19,9 @@ export default function HomePage() {
       <Container mt={80} mb={80}>
         <Title ta="center" mb={20}>Flag Identifier</Title>
         <Text ta="center">Find a flag by its colours</Text>
+        <Text ta="center">Flag assets from{' '}
+          <Anchor href="https://flagpedia.net/download" target="_blank">flagpedia</Anchor>
+        </Text>
       </Container>
 
       <Container size='xl'>
