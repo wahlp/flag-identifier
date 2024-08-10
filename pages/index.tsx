@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filters } from '../components/Filters/Filters';
