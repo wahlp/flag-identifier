@@ -25,7 +25,7 @@ function AdvancedFilter({
     >
       <Table.Td>
         <Checkbox
-          aria-label="Select row"
+          label={item.name}
           checked={advancedFilters.includes(item.id)}
           onChange={(event) => {
               console.log(item.id)
@@ -38,7 +38,6 @@ function AdvancedFilter({
           }
         />
       </Table.Td>
-      <Table.Td>{item.name}</Table.Td>
     </Table.Tr>
   ));
 
@@ -46,7 +45,6 @@ function AdvancedFilter({
     <Table w={240}>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th />
           <Table.Th>{groupHeading}</Table.Th>
         </Table.Tr>
       </Table.Thead>
