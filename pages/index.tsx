@@ -5,7 +5,7 @@ import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filters } from '../components/Filters/Filters';
 import { AdvancedFilters } from '../components/Filters/AdvancedFilters';
 import { Display } from '../components/FlagDisplay/Display';
-import { Text, Container,  Title, Stack } from '@mantine/core';
+import { Text, Container, Title, Stack, Paper } from '@mantine/core';
 
 export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -21,11 +21,17 @@ export default function HomePage() {
         <Text ta="center">Find a flag by its colours</Text>
       </Container>
 
-      <Stack align="center" justify="center">
-        <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
-        <Filters setStrictMode={setStrictMode} strictMode={strictMode} />
-      
-        <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
+      <Container size='xl'>
+        <Paper shadow="sm" radius="md" withBorder p="xl">
+          <Stack align="center" justify="center">
+            <Title order={3}>Colour Filter</Title>
+            <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
+            <Filters setStrictMode={setStrictMode} strictMode={strictMode} />
+            <Title order={3}>Advanced Filters</Title>
+            <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
+          </Stack>
+        </Paper>
+      </Container>
       {/* <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
         Current advanced filters: 
         <br />
@@ -37,9 +43,13 @@ export default function HomePage() {
         {selectedColors.join(', ')}
       </Text> */}
         <Container mt={80} mb={80} size='xl'>
-          <Display selectedColors={selectedColors} strictMode={strictMode} advancedFilters={advancedFilters} />
+          <Paper shadow="sm" radius="md" withBorder p="xl">
+            <Stack align="center" justify="center">
+              <Title order={3}>Matches</Title>
+              <Display selectedColors={selectedColors} strictMode={strictMode} advancedFilters={advancedFilters} />
+            </Stack>
+          </Paper>
         </Container>
-      </Stack>
     </>
   );
 }

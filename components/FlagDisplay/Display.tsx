@@ -59,7 +59,7 @@ export function Display({ selectedColors, advancedFilters, strictMode }: Props) 
   ));
 
   return (
-    <Table horizontalSpacing={100} striped withTableBorder withColumnBorders>
+    <Table striped withTableBorder withColumnBorders>
       <Table.Thead>
         <Table.Tr>
           <Table.Th>Emoji</Table.Th>
