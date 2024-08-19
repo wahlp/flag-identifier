@@ -17,9 +17,9 @@ export default function HomePage() {
 
       <Container mt={80} mb={80}>
         <Title ta="center" mb={20}>Flag Identifier</Title>
-        <Text ta="center">Find a flag by its colours</Text>
+        <Text ta="center">Identify a flag emoji by its colours</Text>
         <Text ta="center">Flag assets from{' '}
-          <Anchor href="https://flagpedia.net/download" target="_blank">flagpedia</Anchor>
+          <Anchor href="https://github.com/jdecked/twemoji" target="_blank">twemoji</Anchor>
         </Text>
       </Container>
 
