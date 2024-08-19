@@ -244,7 +244,6 @@
     {"code": "YE", "name": "Yemen", "colours": ["red", "white", "black"], "design": ["three stripes", "horizontal stripes"]},
     {"code": "ZM", "name": "Zambia", "colours": ["green", "red", "black", "orange"], "design": ["solid background", "symbol off centered"]},
     {"code": "ZW", "name": "Zimbabwe", "colours": ["white", "green", "yellow", "red", "black"], "design": ["triangle left", "horizontal stripes"]},
-    {"code": "GB-NIR", "name": "Northern Ireland", "colours": ["white", "red"], "design": ["cross"]},
     {"code": "GB-WLS", "name": "Wales", "colours": ["red", "white", "green"], "design": ["two stripes", "horizontal stripes", "symbol centered"]},
     {"code": "GB-ENG", "name": "England", "colours": ["white", "red"], "design": ["cross"]},
     {"code": "GB-SCT", "name": "Scotland", "colours": ["blue", "white"], "design": ["diagonal cross"]},
@@ -252,5 +251,13 @@
     {"code": "BQ", "name": "Bonaire, Sint Eustatius and Saba", "colours": ["white", "blue", "red", "yellow"], "design": ["diagonal stripes", "symbol top left"]},
     {"code": "SX", "name": "Sint Maarten", "colours": ["white", "red", "blue"], "design": ["triangle left", "horizontal stripes"]},
     {"code": "SS", "name": "South Sudan", "colours": ["blue", "yellow", "black", "red", "green", "white"], "design": ["triangle left", "horizontal stripes", "three stripes"]},
-    {"code": "CW", "name": "Curaçao", "colours": ["blue", "yellow", "white"], "design": ["horizontal stripes", "symbol top left"]}
+    {"code": "CW", "name": "Curaçao", "colours": ["blue", "yellow", "white"], "design": ["horizontal stripes", "symbol top left"]},
+    {"code": "AC", "name": "Ascension Island", "colours": ["blue", "red", "white"], "design": ["symbol top left", "union jack"]},
+    {"code": "CP", "name": "Clipperton Island", "colours": ["blue", "white", "red"], "design": ["three stripes", "vertical stripes"]},
+    {"code": "DG", "name": "Diego Garcia", "colours": ["blue", "white", "red"], "design": ["symbol top left", "union jack", "horizontal stripes"]},
+    {"code": "EA", "name": "Ceuta, Melilla", "colours": ["red", "yellow"], "design": ["three stripes", "horizontal stripes", "symbol off centered"]},
+    {"code": "EU", "name": "European Union", "colours": ["blue", "yellow"], "design": ["solid background", "symbol centered"]},
+    {"code": "IC", "name": "Canary Islands", "colours": ["white", "blue", "yellow"], "design": ["three stripes", "vertical stripes", "symbol centered"]},
+    {"code": "TA", "name": "Tristan da Cunha", "colours": ["blue", "red", "white"], "design": ["symbol top left", "union jack"]},
+    {"code": "UN", "name": "United Nations", "colours": ["blue", "white"], "design": ["solid background", "symbol centered"]}
 ]
