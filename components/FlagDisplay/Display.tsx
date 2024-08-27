@@ -49,8 +49,11 @@ export function Display({ selectedColors, advancedFilters, strictMode, showAllDa
       <Table.Td>
         <Image 
           src={"/images/" + item.code.toLowerCase() + ".png"} 
-          fit="contain"
-          w="auto"
+          {...(!showAllData && { 
+            // please just fit into the column
+            fit: "contain",
+            w: "auto"
+          })}
         />
       </Table.Td>
       <Table.Td>{item.code}</Table.Td>
