@@ -49,7 +49,7 @@ export default function HomePage() {
           <Paper shadow="sm" radius="md" withBorder p="xl">
             <Stack align="center" justify="center">
               <Title order={3}>Matches</Title>
-              <Filter text="Show all data" setValue={setShowAllData} value={showAllData} />
+              <Filter text="Show full details for each item" setValue={setShowAllData} value={showAllData} />
               <Display 
                 selectedColors={selectedColors} 
                 strictMode={strictMode} 
