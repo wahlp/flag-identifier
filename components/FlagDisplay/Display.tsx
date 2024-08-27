@@ -48,7 +48,7 @@ export function Display({ selectedColors, advancedFilters, strictMode }: Props) 
       <Table.Td>
         <Image 
           src={"/images/" + item.code.toLowerCase() + ".png"} 
-          fit="none"
+          fit="contain"
         />
       </Table.Td>
       <Table.Td>{item.code}</Table.Td>
