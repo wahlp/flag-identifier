@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
-import { Filters } from '../components/Filters/Filters';
+import { Filter } from '../components/Filters/Filters';
 import { AdvancedFilters } from '../components/Filters/AdvancedFilters';
 import { Display } from '../components/FlagDisplay/Display';
 import { Text, Container, Title, Stack, Paper, Anchor } from '@mantine/core';
@@ -10,6 +10,7 @@ export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [strictMode, setStrictMode] = useState(false);
   const [advancedFilters, setAdvancedFilters] = useState<string[]>([]);
+  const [showAllData, setShowAllData] = useState(false);
 
   return (
     <>
@@ -28,7 +29,7 @@ export default function HomePage() {
           <Stack align="center" justify="center">
             <Title order={3}>Colour Filter</Title>
             <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
-            <Filters setStrictMode={setStrictMode} strictMode={strictMode} />
+            <Filter text="Match selected colours exactly" setValue={setStrictMode} value={strictMode} />
             <Title order={3}>Advanced Filters</Title>
             <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
           </Stack>
@@ -48,7 +49,13 @@ export default function HomePage() {
           <Paper shadow="sm" radius="md" withBorder p="xl">
             <Stack align="center" justify="center">
               <Title order={3}>Matches</Title>
-              <Display selectedColors={selectedColors} strictMode={strictMode} advancedFilters={advancedFilters} />
+              <Filter text="Show all data" setValue={setShowAllData} value={showAllData} />
+              <Display 
+                selectedColors={selectedColors} 
+                strictMode={strictMode} 
+                advancedFilters={advancedFilters}
+                showAllData={showAllData} 
+              />
             </Stack>
           </Paper>
         </Container>

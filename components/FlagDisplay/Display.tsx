@@ -12,9 +12,10 @@ interface Props {
   selectedColors: string[];
   advancedFilters: string[];
   strictMode: boolean;
+  showAllData: boolean;
 }
 
-export function Display({ selectedColors, advancedFilters, strictMode }: Props) {
+export function Display({ selectedColors, advancedFilters, strictMode, showAllData }: Props) {
   const [data, setData] = useState<DataItem[]>([]);
 
   useEffect(() => {
@@ -49,12 +50,17 @@ export function Display({ selectedColors, advancedFilters, strictMode }: Props) 
         <Image 
           src={"/images/" + item.code.toLowerCase() + ".png"} 
           fit="contain"
+          w="auto"
         />
       </Table.Td>
       <Table.Td>{item.code}</Table.Td>
       <Table.Td>{item.name}</Table.Td>
-      <Table.Td>{item.colours.join(', ')}</Table.Td>
-      <Table.Td>{item.design.join(', ')}</Table.Td>
+      { showAllData &&
+        <>
+          <Table.Td>{item.colours.join(', ')}</Table.Td>
+          <Table.Td>{item.design.join(', ')}</Table.Td>
+        </>
+      }
     </Table.Tr>
   ));
 
@@ -66,9 +72,13 @@ export function Display({ selectedColors, advancedFilters, strictMode }: Props) 
           <Table.Tr>
             <Table.Th>Emoji</Table.Th>
             <Table.Th>Code</Table.Th>
-            <Table.Th>Full Name</Table.Th>
-            <Table.Th>Colours</Table.Th>
-            <Table.Th>Design</Table.Th>
+            <Table.Th>Full Name</Table.Th>  
+            { showAllData &&
+              <>
+                <Table.Th>Colours</Table.Th>
+                <Table.Th>Design</Table.Th>
+              </>
+            }
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>

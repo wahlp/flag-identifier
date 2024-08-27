@@ -1,20 +1,22 @@
 import { Checkbox } from "@mantine/core";
 
 interface Props {
-  setStrictMode(selection: boolean): void;
-  strictMode: boolean;
+  text: string;
+  setValue(selection: boolean): void;
+  value: boolean;
 }
 
-export function Filters({
-  setStrictMode, 
-  strictMode
+export function Filter({
+  text,
+  setValue, 
+  value
 }: Props) {
     return (
       <>
         <Checkbox
-          label="Match selected colours exactly"
-          checked={strictMode}
-          onChange={(event) => setStrictMode(event.currentTarget.checked)}
+          label={text}
+          checked={value}
+          onChange={(event) => setValue(event.currentTarget.checked)}
           mb={40}
           mt={10}
         />
