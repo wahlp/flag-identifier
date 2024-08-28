@@ -1,13 +1,17 @@
-import { Button, Group, useMantineColorScheme } from '@mantine/core';
+import { Button, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
+  const computedColorScheme = useComputedColorScheme('light');
+
+  const toggleColorScheme = () => {
+    setColorScheme(computedColorScheme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
-    <Group justify="center" mt="xl">
-      <Button onClick={() => setColorScheme('light')}>Light</Button>
-      <Button onClick={() => setColorScheme('dark')}>Dark</Button>
-      <Button onClick={() => setColorScheme('auto')}>Auto</Button>
-    </Group>
-  );
+    <Button size="sm" variant="link" onClick={toggleColorScheme}>
+      {computedColorScheme === 'dark' ? <FaSun /> : <FaMoon />}
+    </Button>
+  )
 }

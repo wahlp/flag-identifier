@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* <ColorSchemeToggle /> */}
+      <ColorSchemeToggle />
 
       <Container mt={80} mb={80}>
         <Title ta="center" mb={20}>Flag Identifier</Title>
