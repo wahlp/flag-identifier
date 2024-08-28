@@ -14,10 +14,9 @@ export default function HomePage() {
 
   return (
     <>
-      <ColorSchemeToggle />
-
-      <Container mt={80} mb={80}>
-        <Title ta="center" mb={20}>Flag Identifier</Title>
+      <Container size='xl' mt={80} mb={80}>
+        <ColorSchemeToggle />
+        <Title ta="center" mt={20} mb={20}>Flag Identifier</Title>
         <Text ta="center">Identify a flag emoji by its colours</Text>
         <Text ta="center">Flag assets from{' '}
           <Anchor href="https://github.com/jdecked/twemoji" target="_blank">twemoji</Anchor>

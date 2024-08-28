@@ -10,7 +10,7 @@ export function ColorSchemeToggle() {
   };
 
   return (
-    <Button size="sm" variant="link" onClick={toggleColorScheme}>
+    <Button size="sm" variant="default" onClick={toggleColorScheme}>
       {computedColorScheme === 'dark' ? <FaSun /> : <FaMoon />}
     </Button>
   )
