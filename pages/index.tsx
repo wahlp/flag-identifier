@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Container size='xl' mt={80} mb={80}>
+      <Container size='xl' mt={80} mb={40}>
         <ColorSchemeToggle />
         <Title ta="center" mt={20} mb={20}>Flag Identifier</Title>
         <Text ta="center">Identify a flag emoji by its colours</Text>
@@ -24,7 +24,7 @@ export default function HomePage() {
       </Container>
 
       <Container size='xl'>
-        <Paper shadow="sm" radius="md" withBorder p="xl">
+        <Paper shadow="sm" radius="md" withBorder p="md">
           <Accordion multiple defaultValue={["colour"]}>
             <Accordion.Item value="colour">
               <Accordion.Control>
@@ -56,7 +56,7 @@ export default function HomePage() {
       </Container>
 
       <Container mt={40} mb={80} size='xl'>
-        <Paper shadow="sm" radius="md" withBorder p="xl">
+        <Paper shadow="sm" radius="md" withBorder p="md">
           <Stack align="center" justify="center">
             <Title order={3}>Matches</Title>
             <Filter text="Show full details for each item" setValue={setShowAllData} value={showAllData} />
