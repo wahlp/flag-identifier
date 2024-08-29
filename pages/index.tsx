@@ -4,7 +4,7 @@ import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filter } from '../components/Filters/Filters';
 import { AdvancedFilters } from '../components/Filters/AdvancedFilters';
 import { Display } from '../components/FlagDisplay/Display';
-import { Text, Container, Title, Stack, Paper, Anchor, Accordion } from '@mantine/core';
+import { Text, Container, Title, Stack, Paper, Anchor, Accordion, Center } from '@mantine/core';
 
 export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -28,7 +28,9 @@ export default function HomePage() {
           <Accordion multiple defaultValue={["colour"]}>
             <Accordion.Item value="colour">
               <Accordion.Control>
+                <Center>
                   <Title order={3}>Colour Filter</Title>
+                </Center> 
               </Accordion.Control>
               <Accordion.Panel>
                 <Stack align="center" justify="center">
@@ -40,8 +42,10 @@ export default function HomePage() {
 
             <Accordion.Item value="advanced">
               <Accordion.Control>
-                <Title order={3}>Pattern Filters</Title>
-              </Accordion.Control>
+                  <Center>
+                    <Title order={3}>Pattern Filters</Title>
+                  </Center> 
+                </Accordion.Control>
               <Accordion.Panel>
                 <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
               </Accordion.Panel>
