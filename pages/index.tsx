@@ -34,30 +34,21 @@ export default function HomePage() {
           </Stack>
         </Paper>
       </Container>
-      {/* <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
-        Current advanced filters: 
-        <br />
-        {advancedFilters.join(', ')}
-      </Text>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mih={60}  mx="auto" mt="xl">
-        Current colour filters: 
-        <br />
-        {selectedColors.join(', ')}
-      </Text> */}
-        <Container mt={80} mb={80} size='xl'>
-          <Paper shadow="sm" radius="md" withBorder p="xl">
-            <Stack align="center" justify="center">
-              <Title order={3}>Matches</Title>
-              <Filter text="Show full details for each item" setValue={setShowAllData} value={showAllData} />
-              <Display 
-                selectedColors={selectedColors} 
-                strictMode={strictMode} 
-                advancedFilters={advancedFilters}
-                showAllData={showAllData} 
-              />
-            </Stack>
-          </Paper>
-        </Container>
+      
+      <Container mt={40} mb={80} size='xl'>
+        <Paper shadow="sm" radius="md" withBorder p="xl">
+          <Stack align="center" justify="center">
+            <Title order={3}>Matches</Title>
+            <Filter text="Show full details for each item" setValue={setShowAllData} value={showAllData} />
+            <Display 
+              selectedColors={selectedColors} 
+              strictMode={strictMode} 
+              advancedFilters={advancedFilters}
+              showAllData={showAllData} 
+            />
+          </Stack>
+        </Paper>
+      </Container>
     </>
   );
 }

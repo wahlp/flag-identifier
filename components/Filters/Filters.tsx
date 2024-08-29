@@ -17,7 +17,7 @@ export function Filter({
           label={text}
           checked={value}
           onChange={(event) => setValue(event.currentTarget.checked)}
-          mb={40}
+          mb={10}
           mt={10}
         />
       </>
