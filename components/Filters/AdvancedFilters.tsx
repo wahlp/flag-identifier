@@ -42,7 +42,7 @@ function AdvancedFilter({
   ));
 
   return (
-    <Table w={240}>
+    <Table w={200}>
       <Table.Thead>
         <Table.Tr>
           <Table.Th>{groupHeading}</Table.Th>
@@ -64,10 +64,14 @@ export function AdvancedFilters({
 }: IncomingProps) {
   const advancedFiltersElements = [
     {
-      name: 'Stripes',
+      name: 'Stripes Quantity',
       items: [
         { id: 'two stripes', name: '2 Stripes' },
         { id: 'three stripes', name: '3 Stripes' },
+      ]
+    }, {
+      name: 'Stripes Direction',
+      items: [
         { id: 'horizontal stripes', name: 'Horizontal Stripes' },
         { id: 'vertical stripes', name: 'Vertical Stripes' },
         { id: 'diagonal stripes', name: 'Diagonal Stripes' },
