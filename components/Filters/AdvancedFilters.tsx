@@ -42,7 +42,7 @@ function AdvancedFilter({
   ));
 
   return (
-    <Table w={200}>
+    <Table w={180}>
       <Table.Thead>
         <Table.Tr>
           <Table.Th>{groupHeading}</Table.Th>

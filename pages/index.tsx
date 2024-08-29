@@ -25,16 +25,22 @@ export default function HomePage() {
 
       <Container size='xl'>
         <Paper shadow="sm" radius="md" withBorder p="xl">
-          <Stack align="center" justify="center">
-            <Title order={3}>Colour Filter</Title>
-            <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
-            <Filter text="Match selected colours exactly" setValue={setStrictMode} value={strictMode} />
-          </Stack>
-            
-          <Accordion>
-            <Accordion.Item value="value">
+          <Accordion multiple defaultValue={["colour"]}>
+            <Accordion.Item value="colour">
               <Accordion.Control>
-                <Title order={3}>Advanced Filters</Title>
+                  <Title order={3}>Colour Filter</Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Stack align="center" justify="center">
+                  <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
+                  <Filter text="Match selected colours exactly" setValue={setStrictMode} value={strictMode} />
+                </Stack>
+              </Accordion.Panel>
+            </Accordion.Item>
+
+            <Accordion.Item value="advanced">
+              <Accordion.Control>
+                <Title order={3}>Pattern Filters</Title>
               </Accordion.Control>
               <Accordion.Panel>
                 <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
