@@ -4,7 +4,7 @@ import { ButtonGroup } from '../components/ColorButtons/ButtonGroup';
 import { Filter } from '../components/Filters/Filters';
 import { AdvancedFilters } from '../components/Filters/AdvancedFilters';
 import { Display } from '../components/FlagDisplay/Display';
-import { Text, Container, Title, Stack, Paper, Anchor } from '@mantine/core';
+import { Text, Container, Title, Stack, Paper, Anchor, Accordion } from '@mantine/core';
 
 export default function HomePage() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
@@ -29,12 +29,22 @@ export default function HomePage() {
             <Title order={3}>Colour Filter</Title>
             <ButtonGroup setSelectedColors={setSelectedColors} selectedColors={selectedColors} />
             <Filter text="Match selected colours exactly" setValue={setStrictMode} value={strictMode} />
-            <Title order={3}>Advanced Filters</Title>
-            <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
           </Stack>
+            
+          <Accordion>
+            <Accordion.Item value="value">
+              <Accordion.Control>
+                <Title order={3}>Advanced Filters</Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <AdvancedFilters setAdvancedFilters={setAdvancedFilters} advancedFilters={advancedFilters} />
+              </Accordion.Panel>
+            </Accordion.Item>
+          </Accordion>
+          
         </Paper>
       </Container>
-      
+
       <Container mt={40} mb={80} size='xl'>
         <Paper shadow="sm" radius="md" withBorder p="xl">
           <Stack align="center" justify="center">
