@@ -136,7 +136,7 @@
     {"code": "ML", "name": "Mali", "colours": ["green", "yellow", "red"], "design": ["three stripes", "vertical stripes"]},
     {"code": "MT", "name": "Malta", "colours": ["white", "red"], "design": ["two stripes", "vertical stripes", "symbol top left"]},
     {"code": "MH", "name": "Marshall Islands", "colours": ["blue", "white", "orange"], "design": ["solid background", "symbol off centered", "diagonal stripes"]},
-    {"code": "MQ", "name": "Martinique", "colours": ["red", "green", "black"], "design": ["triangle left", "two stripes", "horizontal stripes"]},
+    {"code": "MQ", "name": "Martinique", "colours": ["blue", "white"], "design": ["cross", "quarters"]},
     {"code": "MR", "name": "Mauritania", "colours": ["red", "green", "yellow"], "design": ["horizontal stripes", "symbol centered"]},
     {"code": "MU", "name": "Mauritius", "colours": ["red", "black", "yellow", "green"], "design": ["horizontal stripes"]},
     {"code": "YT", "name": "Mayotte", "colours": ["white", "blue", "red"], "design": ["solid background", "symbol centered"]},
